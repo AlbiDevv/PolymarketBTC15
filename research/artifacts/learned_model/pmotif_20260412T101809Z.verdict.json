@@ -1,0 +1,14 @@
+{
+  "artifact_key": "pmotif_20260412T101809Z",
+  "accepted": false,
+  "reason": "holdout_1_high_conf_net_ev,holdout_2_high_conf_net_ev,holdout_3_high_conf_net_ev",
+  "mean_high_conf_net_ev": -0.019229460958764582,
+  "mean_high_conf_accuracy": 1.0,
+  "coverage_days": 511,
+  "markets_used": 2237,
+  "failures": [
+    "holdout_1_high_conf_net_ev",
+    "holdout_2_high_conf_net_ev",
+    "holdout_3_high_conf_net_ev"
+  ]
+}

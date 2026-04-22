@@ -1,0 +1,49 @@
+{
+  "accepted": true,
+  "reason": "accepted",
+  "accuracy": 0.997923635752648,
+  "mean_net_ev": 0.36327967615798895,
+  "unique_mean_net_ev": 0.36327967615798895,
+  "selected_count": 2462,
+  "selected_unique_markets": 2462,
+  "selected_accuracy": 0.997923635752648,
+  "selected_unique_accuracy": 0.997923635752648,
+  "rows": 21046,
+  "markets_used": 21046,
+  "coverage_days": 190,
+  "max_entry_price": 0.8,
+  "min_abs_return_zscore_15m": 0.5,
+  "min_trend_consistency_15m": 0.55,
+  "holdouts": [
+    {
+      "label": "holdout_1",
+      "start": "2025-12-19T11:22:06+00:00",
+      "end": "2026-02-17T11:22:06+00:00",
+      "train_coverage_days": 70,
+      "rows": 5738,
+      "selected_count": 1133,
+      "selected_unique_markets": 1133,
+      "selected_accuracy": 0.9973521624007061,
+      "selected_unique_accuracy": 0.9973521624007061,
+      "mean_net_ev": 0.3581920544792586,
+      "unique_mean_net_ev": 0.3581920544792586,
+      "win_rate": 0.9973521624007061,
+      "unique_win_rate": 0.9973521624007061
+    },
+    {
+      "label": "holdout_2",
+      "start": "2026-02-17T11:22:06+00:00",
+      "end": "2026-04-18T11:22:06+00:00",
+      "train_coverage_days": 130,
+      "rows": 8559,
+      "selected_count": 1329,
+      "selected_unique_markets": 1329,
+      "selected_accuracy": 0.9984951091045899,
+      "selected_unique_accuracy": 0.9984951091045899,
+      "mean_net_ev": 0.3683672978367193,
+      "unique_mean_net_ev": 0.3683672978367193,
+      "win_rate": 0.9984951091045899,
+      "unique_win_rate": 0.9984951091045899
+    }
+  ]
+}

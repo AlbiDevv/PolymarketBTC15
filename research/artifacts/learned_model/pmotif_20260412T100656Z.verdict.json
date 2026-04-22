@@ -1,0 +1,18 @@
+{
+  "artifact_key": "pmotif_20260412T100656Z",
+  "accepted": false,
+  "reason": "holdout_1_high_conf_accuracy,holdout_1_high_conf_net_ev,holdout_1_calibration_error,holdout_2_high_conf_accuracy,holdout_2_calibration_error,holdout_3_high_conf_accuracy,holdout_3_calibration_error",
+  "mean_high_conf_net_ev": 9.254246745595529e-05,
+  "mean_high_conf_accuracy": 0.5307000355735823,
+  "coverage_days": 511,
+  "markets_used": 2237,
+  "failures": [
+    "holdout_1_high_conf_accuracy",
+    "holdout_1_high_conf_net_ev",
+    "holdout_1_calibration_error",
+    "holdout_2_high_conf_accuracy",
+    "holdout_2_calibration_error",
+    "holdout_3_high_conf_accuracy",
+    "holdout_3_calibration_error"
+  ]
+}

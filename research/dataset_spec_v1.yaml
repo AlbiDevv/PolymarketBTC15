@@ -1,0 +1,64 @@
+# Dataset specification v1 — research / calibration / hold-out
+# One row = one (market, side, decision_ts) decision point.
+# Versions are immutable once published under a dataset_version tag.
+
+meta:
+  dataset_spec_version: "1.0"
+  encoding: "utf-8"
+  row_key: ["dataset_version", "market_id", "token_id", "side", "decision_ts"]
+
+required_fields:
+  dataset_version: { type: string, doc: "Immutable label, e.g. ds_v1_2026Q2_a" }
+  feature_version: { type: string, doc: "Feature engineering / bucket boundaries version" }
+  split_version: { type: string, doc: "Train/val/hold policy id, e.g. temporal_v1" }
+  market_id: { type: string, doc: "Exchange condition_id / polymarket_id" }
+  event_id: { type: string, nullable: true }
+  token_id: { type: string, doc: "Outcome token for this side (YES or NO native)" }
+  side: { type: enum, values: ["YES", "NO"] }
+  decision_ts: { type: datetime_iso_utc, doc: "Feature cutoff; no future data after this instant" }
+  category: { type: string, doc: "Gamma category or normalized taxonomy" }
+  time_to_resolution_sec: { type: float, doc: ">= 0 at decision_ts" }
+  tte_bucket: { type: string, doc: "Discrete bucket from policy, e.g. 0-1d, 1-7d, ..." }
+  spread: { type: float, doc: "On the token book used for this side (see p_market policy)" }
+  spread_bucket: { type: string }
+  liquidity_proxy: { type: float, doc: "e.g. vol24h, depth sum, or project-specific" }
+  liquidity_bucket: { type: string }
+  depth_bid: { type: float, nullable: true }
+  depth_ask: { type: float, nullable: true }
+  p_market: { type: float, doc: "Side-aware prior; see definitions.py" }
+  p_market_source:
+    type: string
+    doc: "native_yes | native_no | complement_fallback | legacy_unlabeled — как получен p_market для строки"
+  mid_price_if_needed_for_reference: { type: float, nullable: true }
+  execution_price_assumption: { type: string, doc: "e.g. mid | yes_ask | no_ask | vwap_top2" }
+  entry_fee_assumption: { type: float, doc: "Fraction, aligned with PaperBroker policy" }
+  exit_fee_assumption: { type: float }
+  source: { type: enum, values: ["historical", "paper", "mixed"] }
+  resolved_outcome_for_side: { type: int, values: [0, 1], doc: "1 iff this side's token won" }
+  resolved_ts: { type: datetime_iso_utc, nullable: true }
+
+optional_fields:
+  short_term_return: { type: float, nullable: true }
+  recent_volatility: { type: float, nullable: true }
+  orderbook_imbalance: { type: float, nullable: true }
+
+p_market_policy_v1:
+  yes_row:
+    p_market: "Primary: mid from YES-token orderbook at decision_ts (live: PriceHistoryRow.mid; historical: Gamma YES price / collector). p_market_source=native_yes."
+  no_row:
+    p_market: "Primary: native NO mid — PriceHistoryRow.no_mid from NO orderbook (orchestrator) or Gamma NO token price (collect_historical). Fallback: complement from YES with quality flag fallback_complement_no_book and p_market_source=complement_fallback."
+  notes:
+    - "All features must be computable from information available at or before decision_ts."
+
+target_policy_v1:
+  resolved_outcome_for_side:
+    yes_row: "1 if final outcome is YES, else 0"
+    no_row: "1 if final outcome is NO, else 0"
+  forbidden: "Mixing 'market resolved YES' with target for a NO row without mapping to the NO token win."
+
+baseline_models:
+  A: baseline_market
+  B: baseline_calibrated
+  C: baseline_h2_only
+  D: baseline_h4_only
+  E: model_v1

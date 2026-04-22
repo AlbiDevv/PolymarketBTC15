@@ -1,0 +1,27 @@
+# Локальный smoke/e2e: ослабленная ликвидность, чтобы больше рынков проходили фильтр.
+# Запуск: python main.py --config config/settings.e2e_local.yaml
+# Для гарантированной проверки сделки без API — см. tests/test_orchestrator_cycle_trade.py
+mode: dry_run
+
+strategy:
+  edge_threshold: 0.02
+  cycle_interval_sec: 30
+  hypotheses:
+    - H2
+    - H4
+
+liquidity:
+  min_daily_volume: 1
+  min_depth_usd: 5
+  max_price_impact: 0.08
+  min_spread: 0.001
+
+database:
+  url: "sqlite:///prediction_trader_e2e.db"
+
+logging:
+  level: INFO
+  file: logs/trader_e2e.log
+
+alerts:
+  telegram_enabled: false

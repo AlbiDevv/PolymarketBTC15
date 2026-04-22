@@ -1,0 +1,36 @@
+historical:
+  sync:
+    out_dir: data/polymarket_historical
+    page_limit: 100
+    batch_size: 100
+    date_backfill_days: 540
+    date_backfill_stride_days: 30
+    date_backfill_page_limit: 3
+  price_window:
+    out_dir: data/polymarket_historical
+    pre_event_minutes: 60
+    post_event_minutes: 30
+    fidelity_sec: 60
+    concurrency: 12
+    max_markets_per_settlement_day: 20
+    max_markets_per_run: 3000
+    min_markets_required: 2000
+    min_coverage_days: 365
+    fail_on_insufficient_history: true
+
+research:
+  holdouts:
+    window_days: 90
+    windows_count: 3
+    min_high_conf_accuracy: 0.95
+    max_calibration_error: 0.08
+    min_rows_per_holdout: 100
+    min_high_conf_count_per_holdout: 25
+
+strategy:
+  learned_model:
+    min_candidate_confidence: 0.65
+    min_candidate_net_ev: 0.001
+    max_candidate_entry_price: 0.995
+    estimated_slippage: 0.0
+    candidate_stride_sec: 300

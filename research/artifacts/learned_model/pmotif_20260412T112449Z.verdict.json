@@ -1,0 +1,10 @@
+{
+  "artifact_key": "pmotif_20260412T112449Z",
+  "accepted": true,
+  "reason": "accepted",
+  "mean_high_conf_net_ev": 0.04126009028857817,
+  "mean_high_conf_accuracy": 0.9970631424375918,
+  "coverage_days": 511,
+  "markets_used": 2228,
+  "failures": []
+}

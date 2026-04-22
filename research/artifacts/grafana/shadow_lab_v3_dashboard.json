@@ -1,0 +1,48 @@
+{
+  "title": "Shadow Lab v3 Ops",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "WS Health",
+      "targets": [
+        {
+          "expr": "shadow_lab_ws_health_score"
+        }
+      ],
+      "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0}
+    },
+    {
+      "type": "stat",
+      "title": "Forced Taker Exit Ratio",
+      "targets": [
+        {
+          "expr": "shadow_lab_forced_taker_exit_ratio"
+        }
+      ],
+      "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0}
+    },
+    {
+      "type": "stat",
+      "title": "Learning Accuracy",
+      "targets": [
+        {
+          "expr": "shadow_lab_learning_high_conf_accuracy"
+        }
+      ],
+      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0}
+    },
+    {
+      "type": "timeseries",
+      "title": "Portfolio Realized PnL",
+      "targets": [
+        {
+          "expr": "shadow_lab_portfolio_realized_pnl"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 4}
+    }
+  ]
+}

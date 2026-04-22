@@ -1,0 +1,22 @@
+[Unit]
+Description=Prediction Trader Telegram Analytics
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trader
+Group=trader
+WorkingDirectory=/home/trader/apps/prediction_trader
+Environment="PATH=/home/trader/apps/prediction_trader/venv/bin"
+ExecStart=/home/trader/apps/prediction_trader/venv/bin/python -m monitor.telegram_analytics --config config/settings.yaml
+Restart=on-failure
+RestartSec=20
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/home/trader/apps/prediction_trader
+
+[Install]
+WantedBy=multi-user.target

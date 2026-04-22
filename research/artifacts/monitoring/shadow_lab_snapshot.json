@@ -1,0 +1,308 @@
+{
+  "overview": {
+    "generated_at": "2026-04-12T11:26:53.966261+00:00",
+    "winner_key": null,
+    "aggregate": {
+      "bankroll": 0,
+      "equity": 0,
+      "realized_pnl": 0,
+      "unrealized_pnl": 0,
+      "open_positions": 0,
+      "closed_trades": 0,
+      "candidates_24h": 0,
+      "rejections_24h": 0
+    },
+    "tracks": {},
+    "ab_groups": {},
+    "verdict": {
+      "status": "not_confirmed",
+      "reason": "learned_below_start",
+      "artifact_accepted": true,
+      "learned_equity": 0.0,
+      "learned_initial_bankroll": 0.0,
+      "control_equity": 0.0
+    },
+    "runtime": {
+      "mode": "shadow_maker",
+      "started_at": null,
+      "last_cycle_ts": null,
+      "last_cycle_ok": true,
+      "last_cycle_error": null,
+      "ws_connected": false,
+      "markets_fetched_last": 0,
+      "eligible_markets_last": 0,
+      "subscribed_tokens_last": 0,
+      "ws": {
+        "health_score": 0.0,
+        "gap_count": 0,
+        "max_gap_sec": 0.0,
+        "last_message_age_sec": 0.0,
+        "messages_per_minute": 0.0,
+        "entries_frozen": false,
+        "forced_taker_exit_ratio": 0.0,
+        "maker_fill_ratio": 0.0
+      },
+      "learning": {
+        "artifact_key": "pmotif_20260412T112449Z",
+        "accepted": true,
+        "enabled": true,
+        "high_conf_accuracy": 0.9970631424375918,
+        "high_conf_net_ev": 0.04126009028857817,
+        "calibration_error": 0.006059157550082403,
+        "training_fresh_until": "2026-04-19T11:24:49.785398",
+        "verdict": {
+          "accepted": true,
+          "reason": "accepted",
+          "mean_high_conf_net_ev": 0.04126009028857817,
+          "mean_high_conf_accuracy": 0.9970631424375918,
+          "coverage_days": 511,
+          "markets_used": 2228,
+          "failures": []
+        }
+      }
+    },
+    "portfolios": [],
+    "daily": []
+  },
+  "learning": {
+    "artifact_key": "pmotif_20260412T112449Z",
+    "accepted": true,
+    "enabled": true,
+    "artifact_path": "C:\\Users\\binbi\\Desktop\\prediction_trader\\prediction_trader\\research\\artifacts\\learned_model\\pmotif_20260412T112449Z.pkl",
+    "manifest_path": "C:\\Users\\binbi\\Desktop\\prediction_trader\\prediction_trader\\research\\artifacts\\learned_model\\pmotif_20260412T112449Z.json",
+    "high_conf_accuracy": 0.9970631424375918,
+    "high_conf_net_ev": 0.04126009028857817,
+    "calibration_error": 0.006059157550082403,
+    "training_fresh_until": "2026-04-19T11:24:49.785398",
+    "holdouts": [
+      {
+        "rows": 2915,
+        "accuracy": 1.0,
+        "high_conf_accuracy": 1.0,
+        "high_conf_count": 92,
+        "high_conf_ratio": 0.03156089193825043,
+        "late_stage_count": 92,
+        "model_conf_count": 2904,
+        "tradable_count": 104,
+        "expected_net_ev_mean": 0.026672537526577916,
+        "avg_entry_price": 0.9731956521739129,
+        "high_conf_net_ev": 0.026804347826086962,
+        "calibration_error": 0.0005872713860916731,
+        "from": "2025-07-16T11:01:04+00:00",
+        "to": "2025-10-01T07:27:51+00:00"
+      },
+      {
+        "rows": 5062,
+        "accuracy": 0.9966416436191229,
+        "high_conf_accuracy": 1.0,
+        "high_conf_count": 240,
+        "high_conf_ratio": 0.047412090082971155,
+        "late_stage_count": 240,
+        "model_conf_count": 4952,
+        "tradable_count": 368,
+        "expected_net_ev_mean": 0.041825430634222865,
+        "avg_entry_price": 0.9578875,
+        "high_conf_net_ev": 0.04211249999999999,
+        "calibration_error": 0.005621127265227349,
+        "from": "2025-10-14T19:35:11+00:00",
+        "to": "2026-01-10T02:45:28+00:00"
+      },
+      {
+        "rows": 6276,
+        "accuracy": 0.9843849585723391,
+        "high_conf_accuracy": 0.9911894273127754,
+        "high_conf_count": 227,
+        "high_conf_ratio": 0.03616953473550032,
+        "late_stage_count": 231,
+        "model_conf_count": 5991,
+        "tradable_count": 578,
+        "expected_net_ev_mean": 0.06196577018680565,
+        "avg_entry_price": 0.9362136563876651,
+        "high_conf_net_ev": 0.054863423039647564,
+        "calibration_error": 0.011969073998928187,
+        "from": "2026-01-13T16:41:29+00:00",
+        "to": "2026-04-12T10:51:05+00:00"
+      }
+    ],
+    "verdict": {
+      "accepted": true,
+      "reason": "accepted",
+      "mean_high_conf_net_ev": 0.04126009028857817,
+      "mean_high_conf_accuracy": 0.9970631424375918,
+      "coverage_days": 511,
+      "markets_used": 2228,
+      "failures": []
+    }
+  },
+  "verdict": {
+    "status": "not_confirmed",
+    "reason": "learned_below_start",
+    "artifact_accepted": true,
+    "learned_equity": 0.0,
+    "learned_initial_bankroll": 0.0,
+    "control_equity": 0.0
+  },
+  "motifs": [
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "no_extreme:up:calm:unknown",
+      "sample_size": 18804,
+      "hit_rate": 0.0,
+      "expected_value": 0.0010550629578812503,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "yes_extreme:up:calm:unknown",
+      "sample_size": 5995,
+      "hit_rate": 1.0,
+      "expected_value": 0.0012281969107589153,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101809Z",
+      "motif_key": "no_extreme:up:calm:unknown",
+      "sample_size": 1297,
+      "hit_rate": 0.0,
+      "expected_value": -0.019285134926754106,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101240Z",
+      "motif_key": "no_extreme:up:calm:unknown",
+      "sample_size": 1297,
+      "hit_rate": 0.0,
+      "expected_value": -0.019285134926754106,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T100656Z",
+      "motif_key": "no_extreme:up:calm:unknown",
+      "sample_size": 1297,
+      "hit_rate": 0.0,
+      "expected_value": -0.019285134926754106,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "no_extreme:down:calm:unknown",
+      "sample_size": 1269,
+      "hit_rate": 0.0,
+      "expected_value": 0.0020367062332544835,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "mid:up:calm:unknown",
+      "sample_size": 944,
+      "hit_rate": 0.3644067796610169,
+      "expected_value": 0.16549070395127116,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101809Z",
+      "motif_key": "yes_extreme:up:calm:unknown",
+      "sample_size": 501,
+      "hit_rate": 1.0,
+      "expected_value": -0.01903293413173658,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101240Z",
+      "motif_key": "yes_extreme:up:calm:unknown",
+      "sample_size": 501,
+      "hit_rate": 1.0,
+      "expected_value": -0.01903293413173658,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T100656Z",
+      "motif_key": "yes_extreme:up:calm:unknown",
+      "sample_size": 501,
+      "hit_rate": 1.0,
+      "expected_value": -0.01903293413173658,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "no_extreme:down:active:unknown",
+      "sample_size": 198,
+      "hit_rate": 0.0,
+      "expected_value": 0.004379226161616122,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101809Z",
+      "motif_key": "no_extreme:down:calm:unknown",
+      "sample_size": 189,
+      "hit_rate": 0.0,
+      "expected_value": -0.018634603174603227,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101240Z",
+      "motif_key": "no_extreme:down:calm:unknown",
+      "sample_size": 189,
+      "hit_rate": 0.0,
+      "expected_value": -0.018634603174603227,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T100656Z",
+      "motif_key": "no_extreme:down:calm:unknown",
+      "sample_size": 189,
+      "hit_rate": 0.0,
+      "expected_value": -0.018634603174603227,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "yes_extreme:down:calm:unknown",
+      "sample_size": 139,
+      "hit_rate": 1.0,
+      "expected_value": 0.004575539568345306,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101809Z",
+      "motif_key": "mid:up:calm:unknown",
+      "sample_size": 138,
+      "hit_rate": 0.30434782608695654,
+      "expected_value": -0.007478260869565205,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T101240Z",
+      "motif_key": "mid:up:calm:unknown",
+      "sample_size": 138,
+      "hit_rate": 0.30434782608695654,
+      "expected_value": -0.007478260869565205,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T100656Z",
+      "motif_key": "mid:up:calm:unknown",
+      "sample_size": 138,
+      "hit_rate": 0.30434782608695654,
+      "expected_value": -0.007478260869565205,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "mid:down:calm:unknown",
+      "sample_size": 111,
+      "hit_rate": 0.06306306306306306,
+      "expected_value": 0.0014326981981982042,
+      "confidence_score": 0.99
+    },
+    {
+      "artifact_key": "pmotif_20260412T112449Z",
+      "motif_key": "yes_extreme:up:active:unknown",
+      "sample_size": 106,
+      "hit_rate": 1.0,
+      "expected_value": 0.005978670141509388,
+      "confidence_score": 0.99
+    }
+  ],
+  "metrics_text": "# HELP shadow_lab_ws_health_score Latest WebSocket health score.\n# TYPE shadow_lab_ws_health_score gauge\nshadow_lab_ws_health_score 0.000000\n# HELP shadow_lab_ws_gap_count_total Observed websocket gap count.\n# TYPE shadow_lab_ws_gap_count_total counter\nshadow_lab_ws_gap_count_total 0\n# HELP shadow_lab_ws_last_message_age_seconds Age of last websocket message.\n# TYPE shadow_lab_ws_last_message_age_seconds gauge\nshadow_lab_ws_last_message_age_seconds 0.000000\n# HELP shadow_lab_entries_frozen Whether new entries are frozen by ws guardrails.\n# TYPE shadow_lab_entries_frozen gauge\nshadow_lab_entries_frozen 0\n# HELP shadow_lab_forced_taker_exit_ratio Ratio of forced taker exits.\n# TYPE shadow_lab_forced_taker_exit_ratio gauge\nshadow_lab_forced_taker_exit_ratio 0.000000\n# HELP shadow_lab_maker_fill_ratio Ratio of maker-like fills.\n# TYPE shadow_lab_maker_fill_ratio gauge\nshadow_lab_maker_fill_ratio 0.000000\n# HELP shadow_lab_learning_artifact_accepted Whether latest model artifact passed holdouts.\n# TYPE shadow_lab_learning_artifact_accepted gauge\nshadow_lab_learning_artifact_accepted 1\n# HELP shadow_lab_learning_high_conf_accuracy Latest holdout high-confidence accuracy.\n# TYPE shadow_lab_learning_high_conf_accuracy gauge\nshadow_lab_learning_high_conf_accuracy 0.997063\n# HELP shadow_lab_learning_high_conf_net_ev Latest holdout high-confidence net EV.\n# TYPE shadow_lab_learning_high_conf_net_ev gauge\nshadow_lab_learning_high_conf_net_ev 0.041260\n# HELP shadow_lab_learning_calibration_error Latest model calibration error.\n# TYPE shadow_lab_learning_calibration_error gauge\nshadow_lab_learning_calibration_error 0.006059\n# HELP shadow_lab_learning_freshness_seconds Seconds until learned artifact expires.\n# TYPE shadow_lab_learning_freshness_seconds gauge\nshadow_lab_learning_freshness_seconds 604675.806323\n# HELP shadow_lab_training_verdict Combined offline/live training verdict.\n# TYPE shadow_lab_training_verdict gauge\nshadow_lab_training_verdict 0\n"
+}

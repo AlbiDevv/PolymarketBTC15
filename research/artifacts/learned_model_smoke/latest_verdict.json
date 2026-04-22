@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "reason": "not_enough_history",
+  "details": "min_coverage_days",
+  "mean_high_conf_net_ev": 0.0,
+  "mean_high_conf_accuracy": 0.0,
+  "coverage_days": 0,
+  "markets_used": 21
+}

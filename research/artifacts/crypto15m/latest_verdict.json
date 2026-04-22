@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "reason": "accepted",
+  "accuracy": 0.7720905877732688,
+  "mean_net_ev": 0.01584176572914985,
+  "unique_mean_net_ev": 0.023342514332109796,
+  "selected_count": 7434,
+  "selected_unique_markets": 3133,
+  "selected_accuracy": 0.9691955878396556,
+  "selected_unique_accuracy": 0.949569103096074,
+  "rows": 121340,
+  "markets_used": 17246,
+  "coverage_days": 90
+}

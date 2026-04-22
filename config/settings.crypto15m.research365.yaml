@@ -1,0 +1,169 @@
+mode: shadow_maker
+
+exchange:
+  platform: polymarket
+  clob_url: https://clob.polymarket.com
+  gamma_url: https://gamma-api.polymarket.com
+  ws_url: wss://ws-subscriptions-clob.polymarket.com/ws/market
+  chain_id: 137
+
+strategy:
+  edge_threshold: 0.02
+  kelly_fraction: 0.25
+  stake_min: 5.0
+  stake_max: 10.0
+  fee_rate: 0.02
+  max_spread: 0.15
+  hypotheses: [H7]
+  crypto15m_model:
+    enabled: true
+    artifact_path: research/artifacts/crypto15m_btc365/latest_manifest.json
+    require_accepted_artifact: false
+    min_confidence: 0.90
+    min_net_ev: 0.003
+    reload_interval_sec: 300
+
+lab:
+  enabled: true
+  mode: shadow_maker
+  universe:
+    max_markets: 1
+    max_horizon_days: 30
+  scheduler:
+    market_refresh_sec: 30
+    signal_eval_sec: 1
+    equity_sample_sec: 5
+  ab_testing:
+    enabled: true
+    control_suffix: control
+    learned_suffix: learned
+  execution:
+    ttl_sec: 30
+    reprice_sec: 5
+    max_reprices: 3
+    force_exit_after_failed_reprices: 3
+    latency_penalty_bps: 2.0
+    max_event_age_ms: 2500
+  market_quality:
+    enabled: true
+    min_score_default: 55
+    require_end_date: true
+    require_yes_no_pair: true
+  crypto15m:
+    enabled: true
+    trade_assets: [BTC]
+    max_horizon_hours: 2
+    candidate_window_minutes: 15
+    signal_eval_sec: 1
+    min_depth_usd: 100
+    max_spread: 0.04
+    min_net_ev: 0.003
+    max_poly_return_abs: 1.0
+    maker_wait_sec: 8
+    allow_taker_entry: true
+    taker_entry_minutes: 20
+    min_confidence: 0.90
+    momentum_threshold: 0.003
+    ab_thresholds: [0.80, 0.90, 0.95]
+    control_min_confidence: 0.55
+    live_ohlcv_enabled: true
+    live_ohlcv_poll_sec: 10
+    live_ohlcv_lookback_minutes: 120
+    live_ohlcv_stale_sec: 180
+    shadow_stake_max: 10.0
+    post_ab_shadow_stake_max: 10.0
+    slug_discovery_enabled: true
+    slug_discovery_behind_intervals: 0
+    slug_discovery_ahead_intervals: 1
+    slug_discovery_concurrency: 8
+    reward_guard_enabled: true
+    reward_min_score: 0.0
+    reward_size_penalty: 0.001
+    reward_fill_penalty: 0.004
+    reward_drawdown_penalty: 0.25
+    reward_stop_streak_penalty: 0.006
+    reward_market_exit_penalty: 0.004
+    reward_min_fill_rate: 0.15
+    reward_stop_streak_limit: 2
+    reward_lookback_trades: 12
+    reward_lookback_orders: 30
+  portfolios:
+    - key: Crypto15m
+      hypotheses: [H7]
+      pack: crypto15m
+      track: crypto15m
+      max_horizon_days: 1
+      min_daily_volume: 100
+      min_depth_usd: 100
+      max_spread: 0.04
+      min_quality_score: 55
+      time_to_resolution_max_hours: 2
+      stop_loss_pct: 0.01
+      take_profit_pct: 0.02
+      max_hold_hours: 0.25
+      allow_taker_entry_minutes: 20
+      stake_max_override: 10.0
+  exit_time_hours: 72
+
+risk:
+  max_positions: 30
+  max_concentration: 0.10
+  daily_loss_limit: 0.05
+  weekly_loss_limit: 0.10
+  total_drawdown_stop: 0.20
+  max_correlated_exposure: 0.15
+
+liquidity:
+  min_daily_volume: 100
+  min_depth_usd: 100
+  max_price_impact: 0.005
+  min_spread: 0.001
+
+bankroll:
+  initial: 1500
+  currency: USDC
+
+database:
+  url: "sqlite:///prediction_trader.db"
+
+logging:
+  level: INFO
+  file: logs/trader.log
+  rotation: "10 MB"
+  retention: "30 days"
+
+historical:
+  sync:
+    out_dir: data/polymarket_historical_btc365
+    page_limit: 100
+    batch_size: 100
+  price_window:
+    out_dir: data/polymarket_historical_btc365
+    pre_event_minutes: 60
+    post_event_minutes: 30
+    fidelity_sec: 60
+    concurrency: 12
+    max_markets_per_run: 50000
+    min_markets_required: 10000
+    min_coverage_days: 300
+    fail_on_insufficient_history: true
+
+crypto_data:
+  enabled: true
+  exchange_primary: binance
+  exchange_fallbacks: [okx, bybit]
+  symbols: [BTC/USDT]
+  timeframes: [1m, 5m, 15m]
+  history_days: 365
+  out_dir: data/crypto_ohlcv_btc365
+
+research:
+  holdouts:
+    window_days: 90
+    windows_count: 3
+    min_high_conf_accuracy: 0.95
+    max_calibration_error: 0.08
+    min_rows_per_holdout: 100
+    min_high_conf_count_per_holdout: 25
+    monitoring_export_dir: research/artifacts/monitoring
+    grafana_dir: research/artifacts/grafana
