@@ -35,6 +35,7 @@ backups/
 *.dump
 research/artifacts/**/chroma/
 research/artifacts/**/overnight/
+research/artifacts/monitoring/*.json
 config/secrets.yaml
 .idea/
 .vscode/
