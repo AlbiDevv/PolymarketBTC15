@@ -1,7 +1,7 @@
 {
   "artifact_key": "pmotif_20260412T100656Z",
   "created_at": "2026-04-12T10:06:56.258015+00:00",
-  "model_path": "C:\\Users\\binbi\\Desktop\\prediction_trader\\prediction_trader\\research\\artifacts\\learned_model\\pmotif_20260412T100656Z.pkl",
+  "model_path": "research/artifacts/learned_model/pmotif_20260412T100656Z.pkl",
   "feature_columns": [
     "market_yes",
     "price_return_60m",
