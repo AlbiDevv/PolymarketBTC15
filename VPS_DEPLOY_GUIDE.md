@@ -283,10 +283,10 @@ python main.py --mode dry_run
 # С локальной машины (Windows PowerShell):
 
 # Загрузить весь проект
-scp -P 2222 -r "c:\Users\scanner\Desktop\M\prediction_trader" trader@ВАШ_IP:~/apps/
+scp -P 2222 -r "C:\path\to\prediction_trader" trader@ВАШ_IP:~/apps/
 
 # Загрузить только обновлённый файл
-scp -P 2222 "c:\Users\scanner\Desktop\M\prediction_trader\main.py" trader@ВАШ_IP:~/apps/prediction_trader/
+scp -P 2222 "C:\path\to\prediction_trader\main.py" trader@ВАШ_IP:~/apps/prediction_trader/
 ```
 
 ### 3.8. Запуск как systemd-сервис (автозапуск)
