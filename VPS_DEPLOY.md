@@ -49,7 +49,7 @@ mkdir -p ~/apps
 Upload from Windows:
 
 ```powershell
-scp -r "c:\Users\binbi\Desktop\prediction_trader\prediction_trader" trader@SERVER_IP:~/apps/prediction_trader
+scp -r "C:\path\to\prediction_trader" trader@SERVER_IP:~/apps/prediction_trader
 ```
 
 Install on VPS:
